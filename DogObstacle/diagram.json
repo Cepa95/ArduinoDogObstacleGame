@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Cepa95",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -30.2, "left": 199.2, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 106.2, "left": 124.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -10.2,
+      "left": 300.6,
+      "rotate": 90,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 140.8,
+      "left": 418.4,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "bb1:15b.g", "uno:2", "green", [ "v0" ] ],
+    [ "bb1:13b.g", "uno:GND.1", "black", [ "v0" ] ],
+    [ "lcd1:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "lcd1:SDA", "uno:A4", "gold", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5", "orange", [ "h0" ] ],
+    [ "btn1:1.l", "bb1:15t.a", "", [ "$bb" ] ],
+    [ "btn1:2.l", "bb1:13t.a", "", [ "$bb" ] ],
+    [ "btn1:1.r", "bb1:15b.f", "", [ "$bb" ] ],
+    [ "btn1:2.r", "bb1:13b.f", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
